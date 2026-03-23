@@ -1123,9 +1123,10 @@ function CarDetail({ car: c, navigate }) {
 /* ===================== ADMIN PANEL ===================== */
 
 // השתמש ב-var במקום let/const למשתנים גלובליים בתוך Babel בדפדפן
-var adminMovies = var adminMovies || JSON.parse(JSON.stringify(MOVIES));
-var adminChars = var adminChars || JSON.parse(JSON.stringify(CHARACTERS));
-var adminCars = var adminCars || JSON.parse(JSON.stringify(CARS));
+// התיקון המדויק:
+var adminMovies = window.adminMovies || JSON.parse(JSON.stringify(MOVIES));
+var adminChars = window.adminChars || JSON.parse(JSON.stringify(CHARACTERS));
+var adminCars = window.adminCars || JSON.parse(JSON.stringify(CARS));
 
 const ADMIN_PASSWORD = 'OmerAdmin7!';
 var adminSiteSettings = {
