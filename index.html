@@ -2522,10 +2522,12 @@ function App() {
         onMouseLeave: e => { e.currentTarget.style.background = 'var(--bg3)'; e.currentTarget.style.color = 'var(--text2)'; e.currentTarget.style.borderColor = 'var(--border2)'; }
       }, '⚙️')
     )
-  );
-}
+    );
+  }
 
-ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+  // רינדור סופי
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(React.createElement(App));
 </script>
 </body>
 </html>
