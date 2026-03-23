@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -400,10 +399,7 @@
   };
 
   const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-  
-  // הופך את Firebase לנגיש לשאר הקוד
-  window.__db = db;
+  window.__db = getFirestore(app);
   window.__firebase = { collection, doc, getDocs, setDoc, deleteDoc, onSnapshot, writeBatch };
   window.__firebaseReady = true;
   document.dispatchEvent(new Event('firebase-ready'));
