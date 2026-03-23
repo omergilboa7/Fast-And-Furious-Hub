@@ -1123,15 +1123,19 @@ function CarDetail({ car: c, navigate }) {
 
 const ADMIN_PASSWORD = 'OmerAdmin7!';
 
-/* --- Mutable data store (starts as copy of originals) --- */
-let adminMovies = JSON.parse(JSON.stringify(MOVIES));
-let adminChars = JSON.parse(JSON.stringify(CHARACTERS));
-let adminCars = JSON.parse(JSON.stringify(CARS));
-let adminSiteSettings = {
-  siteName: 'F&F HUB', heroTitle: 'THE FAST &', heroTitle2: 'FURIOUS',
+/* שיניתי מ-let ל-var כדי למנוע את שגיאת ה-Redeclaration */
+var adminMovies = JSON.parse(JSON.stringify(MOVIES));
+var adminChars = JSON.parse(JSON.stringify(CHARACTERS));
+var adminCars = JSON.parse(JSON.stringify(CARS));
+var adminSiteSettings = {
+  siteName: 'F&F HUB', 
+  heroTitle: 'THE FAST &', 
+  heroTitle2: 'FURIOUS',
   heroDesc: 'Every film. Every character. Every car. The ultimate fan database for the fastest franchise in cinema history.',
   footerText: 'A fan platform for the Fast & Furious universe · Built for the family 🚗',
-  primaryColor: '#e8392a', accentColor: '#1a9de0', goldColor: '#f0a500',
+  primaryColor: '#e8392a', 
+  accentColor: '#1a9de0', 
+  goldColor: '#f0a500',
   heroBadge: '🚗 THE ULTIMATE F&F DATABASE',
 };
 
