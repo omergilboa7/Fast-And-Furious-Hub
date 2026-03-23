@@ -403,14 +403,6 @@
   document.dispatchEvent(new Event('firebase-ready'));
 </script>
 
-<script type="text/babel">
-  const { useState, useEffect, useMemo, useRef, createContext, useContext, useCallback } = React;
-
-  // מחיקת השורה עם ה-src="script.js" אם היא קיימת אצלך ומעבר ישיר להגדרות:
-  var adminMovies = window.adminMovies || (typeof MOVIES !== 'undefined' ? JSON.parse(JSON.stringify(MOVIES)) : []);
-  var adminChars = window.adminChars || (typeof CHARACTERS !== 'undefined' ? JSON.parse(JSON.stringify(CHARACTERS)) : []);
-  var adminCars = window.adminCars || (typeof CARS !== 'undefined' ? JSON.parse(JSON.stringify(CARS)) : []);
-
 /* ===================== FIREBASE HELPERS ===================== */
 async function fbSet(col, id, data) {
   try { const { doc, setDoc } = window.__firebase; await setDoc(doc(window.__db, col, String(id)), data); return true; }
